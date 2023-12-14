@@ -1,42 +1,27 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* 
+ - Marine blue: hsl(213, 96%, 18%)
+- Purplish blue: hsl(243, 100%, 62%)
+- Pastel blue: hsl(228, 100%, 84%)
+- Light blue: hsl(206, 94%, 87%)
+- Strawberry red: hsl(354, 84%, 57%)
+ */
+/* 
+- Cool gray: hsl(231, 11%, 63%)
+- Light gray: hsl(229, 24%, 87%)
+- Magnolia: hsl(217, 100%, 97%)
+- Alabaster: hsl(231, 100%, 99%)
+- White: hsl(0, 0%, 100%)
+ */
+:root {
+	--primary-one: hsl(213, 96%, 18%);
+	--primary-two: hsl(243, 100%, 62%);
+	--primary-three: hsl(228, 100%, 84%);
+	--primary-four: hsl(206, 94%, 87%);
+	--primary-five: hsl(354, 84%, 57%);
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+	--neutral-one: hsl(231, 11%, 63%);
+	--neutral-two: hsl(229, 24%, 87%);
+	--neutral-three: hsl(217, 100%, 97%);
+	--neutral-four: hsl(231, 100%, 99%);
+	--neutral-five: hsl(0, 0%, 100%);
 }
