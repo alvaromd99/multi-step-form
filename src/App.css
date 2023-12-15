@@ -25,3 +25,17 @@
 	--neutral-four: hsl(231, 100%, 99%);
 	--neutral-five: hsl(0, 0%, 100%);
 }
+
+.App {
+	min-height: 100vh;
+	background-color: var(--neutral-two);
+	display: grid;
+	place-items: center;
+}
+
+.main {
+	width: 60rem;
+	height: 40rem;
+	background-color: var(--neutral-four);
+	border-radius: 20px;
+}
