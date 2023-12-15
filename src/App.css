@@ -12,6 +12,8 @@
 - Alabaster: hsl(231, 100%, 99%)
 - White: hsl(0, 0%, 100%)
  */
+
+/* Weights: 400 500 700 */
 :root {
 	--primary-one: hsl(213, 96%, 18%);
 	--primary-two: hsl(243, 100%, 62%);
@@ -49,4 +51,46 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-radius: 10px;
+}
+
+.steps-cont {
+	padding: 40px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.step {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	& .step-number {
+		width: 2.6rem;
+		height: 2.6rem;
+		border: 1px solid var(--neutral-three);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& p {
+			font-weight: 700;
+		}
+	}
+
+	& .step-content {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		text-transform: uppercase;
+
+		& p {
+			color: var(--neutral-one);
+		}
+
+		& h2 {
+			font-weight: 700;
+		}
+	}
 }
