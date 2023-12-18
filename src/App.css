@@ -15,22 +15,22 @@
 
 /* Weights: 400 500 700 */
 :root {
-	--primary-one: hsl(213, 96%, 18%);
-	--primary-two: hsl(243, 100%, 62%);
-	--primary-three: hsl(228, 100%, 84%);
-	--primary-four: hsl(206, 94%, 87%);
-	--primary-five: hsl(354, 84%, 57%);
+	--marine-blue: hsl(213, 96%, 18%);
+	--purplish-blue: hsl(243, 100%, 62%);
+	--pastel-blue: hsl(228, 100%, 84%);
+	--light-blue: hsl(206, 94%, 87%);
+	--strawberry-red: hsl(354, 84%, 57%);
 
-	--neutral-one: hsl(231, 11%, 63%);
-	--neutral-two: hsl(229, 24%, 87%);
-	--neutral-three: hsl(217, 100%, 97%);
-	--neutral-four: hsl(231, 100%, 99%);
-	--neutral-five: hsl(0, 0%, 100%);
+	--cool-gray: hsl(231, 11%, 63%);
+	--light-gray: hsl(229, 24%, 87%);
+	--magnolia: hsl(217, 100%, 97%);
+	--alabaster: hsl(231, 100%, 99%);
+	--white: hsl(0, 0%, 100%);
 }
 
 .App {
 	min-height: 100vh;
-	background-color: var(--neutral-two);
+	background-color: var(--light-gray);
 	display: grid;
 	place-items: center;
 }
@@ -38,7 +38,7 @@
 .main {
 	width: 60rem;
 	height: 40rem;
-	background-color: var(--neutral-four);
+	background-color: var(--alabaster);
 	border-radius: 20px;
 	padding: 10px;
 }
@@ -68,7 +68,7 @@
 	& .step-number {
 		width: 2.6rem;
 		height: 2.6rem;
-		border: 1px solid var(--neutral-three);
+		border: 1px solid var(--magnolia);
 		border-radius: 50%;
 		display: flex;
 		align-items: center;
@@ -86,11 +86,17 @@
 		text-transform: uppercase;
 
 		& p {
-			color: var(--neutral-one);
+			color: var(--cool-gray);
 		}
 
 		& h2 {
 			font-weight: 700;
 		}
 	}
+}
+
+.step.selected .step-number {
+	background-color: var(--light-blue);
+	color: var(--marine-blue);
+	border: 1px solid var(--light-blue);
 }
