@@ -1,11 +1,17 @@
+import { useRender } from '../../hooks/useRender'
+
 interface SideStepProps {
 	order: number
 	text: string
 }
 
 const SideStep = ({ order, text }: SideStepProps) => {
+	const { componentToShow } = useRender()
+
+	const className = order === componentToShow ? 'selected' : ''
+
 	return (
-		<div className='step'>
+		<div className={`step ${className}`}>
 			<div className='step-number'>
 				<p>{order}</p>
 			</div>

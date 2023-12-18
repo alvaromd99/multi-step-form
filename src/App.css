@@ -41,6 +41,8 @@
 	background-color: var(--alabaster);
 	border-radius: 20px;
 	padding: 10px;
+	display: flex;
+	gap: 10px;
 }
 
 .side-bar {
@@ -99,4 +101,9 @@
 	background-color: var(--light-blue);
 	color: var(--marine-blue);
 	border: 1px solid var(--light-blue);
+}
+
+.main-content {
+	width: 100%;
+	padding: 3rem 5rem;
 }
