@@ -1,3 +1,5 @@
-export default function SelectPlan() {
+const SelectPlan = () => {
 	return <div>SelectPlan</div>
 }
+
+export default SelectPlan
