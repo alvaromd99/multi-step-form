@@ -1,4 +1,4 @@
-import Title from './header/Title'
+import Title from '../header/Title'
 
 const InfoForm = () => {
 	return (

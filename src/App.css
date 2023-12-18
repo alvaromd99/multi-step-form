@@ -26,6 +26,8 @@
 	--magnolia: hsl(217, 100%, 97%);
 	--alabaster: hsl(231, 100%, 99%);
 	--white: hsl(0, 0%, 100%);
+
+	--w: 17rem;
 }
 
 .App {
@@ -46,7 +48,7 @@
 }
 
 .side-bar {
-	width: 17rem;
+	width: var(--w);
 	height: 100%;
 	background-image: url('./assets/images/bg-sidebar-desktop.svg');
 	background-position: center;
@@ -104,14 +106,19 @@
 }
 
 .main-content {
-	width: 100%;
+	width: calc(100% - var(--w));
 	color: var(--marine-blue);
 	padding: 3rem 5rem;
 }
 
 .header {
-	& h1 {
+	& h2 {
 		font-size: 2rem;
 		font-weight: 700;
+		margin-bottom: 15px;
+	}
+
+	& h3 {
+		color: var(--cool-gray);
 	}
 }

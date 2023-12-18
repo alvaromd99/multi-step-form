@@ -1,10 +1,10 @@
 import { useRender } from '../../hooks/useRender'
-import InfoForm from '../steps/InfoForm'
-import PickAddOns from '../steps/PickAddOns'
-import SelectPlan from '../steps/SelectPlan'
-import Summary from '../steps/Summary'
+import InfoForm from '../step1/InfoForm'
+import PickAddOns from '../step3/PickAddOns'
+import SelectPlan from '../step2/SelectPlan'
+import Summary from '../step4/Summary'
 
-export default function MainContent() {
+const MainContent = () => {
 	const { componentToShow } = useRender()
 
 	return (
@@ -16,3 +16,5 @@ export default function MainContent() {
 		</div>
 	)
 }
+
+export default MainContent
