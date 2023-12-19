@@ -11,11 +11,11 @@ const SideStep = ({ order, text }: SideStepProps) => {
 	const className = order === componentToShow ? 'selected' : ''
 
 	return (
-		<div className={`step ${className}`}>
-			<div className='step-number'>
+		<div className={`side-step ${className}`}>
+			<div className='side-step-number'>
 				<p>{order}</p>
 			</div>
-			<div className='step-content'>
+			<div className='side-step-content'>
 				<p>{`Step ${order}`}</p>
 				<h2>{text}</h2>
 			</div>

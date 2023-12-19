@@ -1,9 +1,10 @@
+import Footer from '../footer/Footer'
 import Title from '../header/Title'
 import CustomInput from './CustomInput'
 
 const InfoForm = () => {
 	return (
-		<div className='step1'>
+		<div className='main-content-step step-one'>
 			<Title
 				title='Personal Info'
 				subtitle='Please provide your name, email address and phone number.'
@@ -28,6 +29,7 @@ const InfoForm = () => {
 					placeholder='e.g. +1 234 567 890'
 				/>
 			</div>
+			<Footer order={1} />
 		</div>
 	)
 }
