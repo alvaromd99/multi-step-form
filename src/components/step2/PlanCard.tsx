@@ -7,9 +7,13 @@ interface PlanCardProps {
 export default function PlanCard({ title, price, svg }: PlanCardProps) {
 	return (
 		<div className='plan-card'>
-			<img src={svg} alt={`${title} image`} />
-			<h2></h2>
-			<p>{`$${price}/mo`}</p>
+			<div className='card-img'>
+				<img src={svg} alt={`${title} image`} />
+			</div>
+			<div className='card-text'>
+				<h2>{title}</h2>
+				<p>{`$${price}/mo`}</p>
+			</div>
 		</div>
 	)
 }

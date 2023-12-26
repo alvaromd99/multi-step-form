@@ -18,6 +18,10 @@ const SelectPlan = () => {
 				<PlanCard title='Advance' price='12' svg={AdvanceIcon} />
 				<PlanCard title='Pro' price='15' svg={ProIcon} />
 			</div>
+			<label className='pay-plan-switch'>
+				<input type='checkbox' />
+				<span className='pay-plan-slider'></span>
+			</label>
 			<Footer order={2} />
 		</div>
 	)

@@ -15,7 +15,7 @@ export default function Footer({ order }: FooterProps) {
 			style={{ justifyContent: isDisabled ? 'flex-end' : 'space-between' }}>
 			<button
 				className='back-btn'
-				onClick={() => changeComponentToShow(order + 1)}
+				onClick={() => changeComponentToShow(order - 1)}
 				disabled={isDisabled}
 				style={{ display: isDisabled ? 'none' : 'block' }}>
 				Go Back
