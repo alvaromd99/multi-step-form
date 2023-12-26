@@ -23,8 +23,8 @@
 
 	--cool-gray: hsl(231, 11%, 63%);
 	--light-gray: hsl(229, 24%, 87%);
-	--magnolia: hsl(217, 100%, 97%);
-	--alabaster: hsl(231, 100%, 99%);
+	--magnolia: hsl(216, 100%, 97%);
+	--alabaster: hsl(228, 100%, 99%);
 	--white: hsl(0, 0%, 100%);
 
 	--w: 17rem;
@@ -70,7 +70,7 @@
 	align-items: center;
 	gap: 20px;
 
-	& .side-step-number {
+	.side-step-number {
 		width: 2.6rem;
 		height: 2.6rem;
 		border: 1px solid var(--magnolia);
@@ -79,22 +79,22 @@
 		align-items: center;
 		justify-content: center;
 
-		& p {
+		p {
 			font-weight: 700;
 		}
 	}
 
-	& .side-step-content {
+	.side-step-content {
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
 		text-transform: uppercase;
 
-		& p {
+		p {
 			color: var(--cool-gray);
 		}
 
-		& h2 {
+		h2 {
 			font-weight: 700;
 		}
 	}
@@ -113,13 +113,13 @@
 }
 
 .header {
-	& h2 {
+	h2 {
 		font-size: 2rem;
 		font-weight: 700;
 		margin-bottom: 15px;
 	}
 
-	& h3 {
+	h3 {
 		color: var(--cool-gray);
 	}
 }
@@ -138,7 +138,7 @@
 	display: flex;
 	align-items: center;
 
-	& .next-btn {
+	.next-btn {
 		background-color: var(--marine-blue);
 		min-height: 3rem;
 		padding: 1rem 1.4rem;
@@ -148,7 +148,7 @@
 		border-radius: 8px;
 	}
 
-	& .back-btn {
+	.back-btn {
 		background-color: transparent;
 		min-height: 3rem;
 		border: none;
@@ -171,7 +171,7 @@
 	flex-direction: column;
 	gap: 12px;
 
-	& input {
+	input {
 		width: 100%;
 		height: 3.4rem;
 		background-color: transparent;
@@ -183,12 +183,12 @@
 		font-weight: 500;
 	}
 
-	& input:focus {
+	input:focus {
 		border: none;
 		outline: 1px solid var(--purplish-blue);
 	}
 
-	& .custom-input-info {
+	.custom-input-info {
 		display: flex;
 		justify-content: space-between;
 	}
@@ -212,13 +212,13 @@
 	flex-direction: column;
 	justify-content: space-between;
 
-	& .card-text {
-		& h2 {
+	.card-text {
+		h2 {
 			font-size: 1.1rem;
 			font-weight: 700;
 			margin-bottom: 8px;
 		}
-		& p {
+		p {
 			color: var(--cool-gray);
 		}
 	}
@@ -227,4 +227,76 @@
 .plan-card:hover,
 .plan-card:focus-visible {
 	border-color: var(--marine-blue);
+}
+
+.pay-plan {
+	width: 100%;
+	height: 3rem;
+	margin-top: 2rem;
+	border-radius: 4px;
+	background-color: var(--magnolia);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.pay-plan-switch {
+		position: relative;
+		display: inline-block;
+		width: 40px;
+		height: 20px;
+		user-select: none;
+
+		input {
+			display: none;
+		}
+
+		.pay-plan-slider {
+			position: absolute;
+			cursor: pointer;
+			inset: 0;
+			background-color: var(--marine-blue);
+			transition: 0.4s;
+			border-radius: 10px;
+		}
+
+		.pay-plan-slider:before {
+			content: '';
+			position: absolute;
+			height: 16px;
+			width: 16px;
+			left: 2px;
+			top: 2px;
+			background-color: var(--white);
+			border-radius: 50%;
+			transition: 0.4s;
+		}
+
+		.left-text,
+		.right-text {
+			position: absolute;
+			font-weight: 500;
+			transition: 0.4s;
+			color: var(--cool-gray);
+		}
+
+		.left-text {
+			left: -100px;
+		}
+
+		.right-text {
+			left: 80px;
+		}
+
+		input:checked ~ .pay-plan-slider:before {
+			transform: translateX(20px);
+		}
+
+		input:not(:checked) ~ .left-text {
+			color: var(--marine-blue);
+		}
+
+		input:checked ~ .right-text {
+			color: var(--marine-blue);
+		}
+	}
 }
