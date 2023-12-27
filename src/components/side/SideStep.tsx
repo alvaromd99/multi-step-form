@@ -1,4 +1,5 @@
 import { useRender } from '../../hooks/useRender'
+import './SideBar.css'
 
 interface SideStepProps {
 	order: number

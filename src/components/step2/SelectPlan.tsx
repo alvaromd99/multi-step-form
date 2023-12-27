@@ -2,6 +2,7 @@ import Footer from '../footer/Footer'
 import Title from '../header/Title'
 import PlanCard from './PlanCard'
 import { useState } from 'react'
+import './SelectPlan.css'
 
 import ArcadeIcon from '../../assets/images/icon-arcade.svg'
 import AdvanceIcon from '../../assets/images/icon-advanced.svg'
@@ -14,8 +15,6 @@ const SelectPlan = () => {
 		setIsChecked(!isChecked)
 	}
 
-	console.log(isChecked)
-
 	return (
 		<div className='main-content-step step-two'>
 			<Title
@@ -23,9 +22,27 @@ const SelectPlan = () => {
 				subtitle='You have the option of monthly or yearly billing.'
 			/>
 			<div className='plan-content'>
-				<PlanCard title='Arcade' price='9' svg={ArcadeIcon} />
-				<PlanCard title='Advance' price='12' svg={AdvanceIcon} />
-				<PlanCard title='Pro' price='15' svg={ProIcon} />
+				<PlanCard
+					title='Arcade'
+					priceMonth='9'
+					priceYear=''
+					typeOfPrice={isChecked ? 'year' : 'month'}
+					svg={ArcadeIcon}
+				/>
+				<PlanCard
+					title='Advance'
+					priceMonth='12'
+					priceYear=''
+					typeOfPrice={isChecked ? 'year' : 'month'}
+					svg={AdvanceIcon}
+				/>
+				<PlanCard
+					title='Pro'
+					priceMonth='15'
+					priceYear=''
+					typeOfPrice={isChecked ? 'year' : 'month'}
+					svg={ProIcon}
+				/>
 			</div>
 			<div className='pay-plan'>
 				<label className='pay-plan-switch'>
