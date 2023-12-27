@@ -29,7 +29,7 @@ export default function CustomInput({
 		} else if (id === 'email') {
 			const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-			if (!emailPattern.test(inputValue)) {
+			if (!emailPattern.test(inputValue) && inputValue !== '') {
 				setError('Invalid email')
 			} else {
 				setError('')
@@ -37,7 +37,7 @@ export default function CustomInput({
 		} else if (id === 'phoneNumber') {
 			const phonePattern = /^\+\d{2}\s\d{3}\s\d{3}\s\d{3}$/
 
-			if (!phonePattern.test(inputValue)) {
+			if (!phonePattern.test(inputValue) && inputValue !== '') {
 				setError('Use format: +12 234 567 890')
 			} else {
 				setError('')

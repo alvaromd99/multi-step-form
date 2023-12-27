@@ -23,7 +23,7 @@ export default function PlanCard({
 				<p>
 					{typeOfPrice === 'month' ? `$ ${priceMonth}/mo` : `$ ${priceYear}/yr`}
 				</p>
-				{typeOfPrice === 'year' && <p>2 months free</p>}
+				{typeOfPrice === 'year' && <p className='free-months'>2 months free</p>}
 			</div>
 		</div>
 	)

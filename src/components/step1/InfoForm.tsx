@@ -1,6 +1,7 @@
 import Footer from '../footer/Footer'
 import Title from '../header/Title'
 import CustomInput from './CustomInput'
+import './InfoForm.css'
 
 const InfoForm = () => {
 	return (

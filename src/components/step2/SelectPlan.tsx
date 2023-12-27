@@ -25,21 +25,21 @@ const SelectPlan = () => {
 				<PlanCard
 					title='Arcade'
 					priceMonth='9'
-					priceYear=''
+					priceYear='90'
 					typeOfPrice={isChecked ? 'year' : 'month'}
 					svg={ArcadeIcon}
 				/>
 				<PlanCard
 					title='Advance'
 					priceMonth='12'
-					priceYear=''
+					priceYear='120'
 					typeOfPrice={isChecked ? 'year' : 'month'}
 					svg={AdvanceIcon}
 				/>
 				<PlanCard
 					title='Pro'
 					priceMonth='15'
-					priceYear=''
+					priceYear='150'
 					typeOfPrice={isChecked ? 'year' : 'month'}
 					svg={ProIcon}
 				/>

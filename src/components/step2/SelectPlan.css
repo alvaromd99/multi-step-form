@@ -19,14 +19,19 @@
 	.card-text {
 		display: flex;
 		flex-direction: column;
-		gap: 2px;
+		gap: 4px;
 
 		h2 {
 			font-size: 1.1rem;
 			font-weight: 700;
 		}
+
 		p {
 			color: var(--cool-gray);
+		}
+
+		.free-months {
+			color: inherit;
 		}
 	}
 }
@@ -34,7 +39,10 @@
 .plan-card:hover,
 .plan-card:focus-visible {
 	border-color: var(--marine-blue);
-	background-color: var(--pastel-blue);
+}
+
+.plan-card.selected {
+	background-color: var(--magnolia);
 }
 
 .pay-plan {
