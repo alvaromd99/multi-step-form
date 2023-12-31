@@ -43,6 +43,7 @@
 
 .plan-card.selected {
 	background-color: var(--magnolia);
+	border-color: var(--marine-blue);
 }
 
 .pay-plan {
