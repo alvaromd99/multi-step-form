@@ -4,6 +4,8 @@ interface PlanCardProps {
 	priceYear: string
 	typeOfPrice: 'month' | 'year'
 	svg: string
+	handleClick: (plan: string) => void
+	isSelected: boolean
 }
 
 export default function PlanCard({
@@ -12,9 +14,13 @@ export default function PlanCard({
 	priceYear,
 	typeOfPrice,
 	svg,
+	handleClick,
+	isSelected,
 }: PlanCardProps) {
 	return (
-		<div className='plan-card'>
+		<div
+			className={`plan-card ${isSelected ? 'selected' : ''}`}
+			onClick={() => handleClick(title)}>
 			<div className='card-img'>
 				<img src={svg} alt={`${title} image`} />
 			</div>

@@ -10,9 +10,14 @@ import ProIcon from '../../assets/images/icon-pro.svg'
 
 const SelectPlan = () => {
 	const [isChecked, setIsChecked] = useState(false)
+	const [planSelected, setPlanSelected] = useState('')
 
 	const handleToggleChange = () => {
 		setIsChecked(!isChecked)
+	}
+
+	const handleClick = (plan: string) => {
+		setPlanSelected(plan)
 	}
 
 	return (
@@ -28,6 +33,8 @@ const SelectPlan = () => {
 					priceYear='90'
 					typeOfPrice={isChecked ? 'year' : 'month'}
 					svg={ArcadeIcon}
+					handleClick={handleClick}
+					isSelected={planSelected === 'Arcade'}
 				/>
 				<PlanCard
 					title='Advance'
@@ -35,6 +42,8 @@ const SelectPlan = () => {
 					priceYear='120'
 					typeOfPrice={isChecked ? 'year' : 'month'}
 					svg={AdvanceIcon}
+					handleClick={handleClick}
+					isSelected={planSelected === 'Advance'}
 				/>
 				<PlanCard
 					title='Pro'
@@ -42,6 +51,8 @@ const SelectPlan = () => {
 					priceYear='150'
 					typeOfPrice={isChecked ? 'year' : 'month'}
 					svg={ProIcon}
+					handleClick={handleClick}
+					isSelected={planSelected === 'Pro'}
 				/>
 			</div>
 			<div className='pay-plan'>
