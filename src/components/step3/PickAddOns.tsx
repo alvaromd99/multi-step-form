@@ -1,22 +1,28 @@
-import { ChangeEvent, useState } from 'react'
+import { useState } from 'react'
 import Footer from '../footer/Footer'
 import Title from '../header/Title'
 import AddOn from './AddOn'
 import './PickAddOns.css'
 
+export interface CheckboxesState {
+	firstCheckbox: boolean
+	secondCheckbox: boolean
+	thirdCheckbox: boolean
+}
+
 const PickAddOns = () => {
-	const [checkboxes, setCheckboxes] = useState({
+	const [checkboxes, setCheckboxes] = useState<CheckboxesState>({
 		firstCheckbox: false,
 		secondCheckbox: false,
 		thirdCheckbox: false,
 	})
 
-	const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
-		const { name, checked } = event.target
-		setCheckboxes({ ...checkboxes, [name]: checked })
+	const handleAddOnClick = (checkboxKey: keyof CheckboxesState) => {
+		setCheckboxes({
+			...checkboxes,
+			[checkboxKey]: !checkboxes[checkboxKey],
+		})
 	}
-
-	console.log(checkboxes)
 
 	return (
 		<div className='main-content-step step-two'>
@@ -31,7 +37,7 @@ const PickAddOns = () => {
 					price='1'
 					inputName='firstCheckbox'
 					isChecked={checkboxes.firstCheckbox}
-					handleChange={handleCheckboxChange}
+					handleClick={() => handleAddOnClick('firstCheckbox')}
 				/>
 				<AddOn
 					title='Larger storage'
@@ -39,7 +45,7 @@ const PickAddOns = () => {
 					price='2'
 					inputName='secondCheckbox'
 					isChecked={checkboxes.secondCheckbox}
-					handleChange={handleCheckboxChange}
+					handleClick={() => handleAddOnClick('secondCheckbox')}
 				/>
 				<AddOn
 					title='Customizable profile'
@@ -47,7 +53,7 @@ const PickAddOns = () => {
 					price='2'
 					inputName='thirdCheckbox'
 					isChecked={checkboxes.thirdCheckbox}
-					handleChange={handleCheckboxChange}
+					handleClick={() => handleAddOnClick('thirdCheckbox')}
 				/>
 			</div>
 			<Footer order={3} />

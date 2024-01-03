@@ -43,7 +43,7 @@
 
 .plan-card.selected {
 	background-color: var(--magnolia);
-	border-color: var(--marine-blue);
+	border-color: var(--purplish-blue);
 }
 
 .pay-plan {
@@ -55,65 +55,65 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
 
-	.pay-plan-switch {
-		position: relative;
-		display: inline-block;
-		width: 40px;
-		height: 20px;
-		user-select: none;
+.pay-plan-switch {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	user-select: none;
+}
 
-		input {
-			display: none;
-		}
+input:has(#pay-plan-checkbox) {
+	display: none;
+}
 
-		.pay-plan-slider {
-			position: absolute;
-			cursor: pointer;
-			inset: 0;
-			background-color: var(--marine-blue);
-			transition: 0.4s;
-			border-radius: 10px;
-		}
+.pay-plan-slider {
+	position: absolute;
+	cursor: pointer;
+	inset: 0;
+	background-color: var(--marine-blue);
+	transition: 0.4s;
+	border-radius: 10px;
 
-		.pay-plan-slider:before {
-			content: '';
-			position: absolute;
-			height: 16px;
-			width: 16px;
-			left: 2px;
-			top: 2px;
-			background-color: var(--white);
-			border-radius: 50%;
-			transition: 0.4s;
-		}
-
-		.left-text,
-		.right-text {
-			position: absolute;
-			font-weight: 500;
-			transition: 0.4s;
-			color: var(--cool-gray);
-		}
-
-		.left-text {
-			left: -100px;
-		}
-
-		.right-text {
-			left: 80px;
-		}
-
-		input:checked ~ .pay-plan-slider:before {
-			transform: translateX(20px);
-		}
-
-		input:not(:checked) ~ .left-text {
-			color: var(--marine-blue);
-		}
-
-		input:checked ~ .right-text {
-			color: var(--marine-blue);
-		}
+	&:before {
+		content: '';
+		position: absolute;
+		height: 16px;
+		width: 16px;
+		left: 2px;
+		top: 2px;
+		background-color: var(--white);
+		border-radius: 50%;
+		transition: 0.4s;
 	}
+}
+
+.left-text,
+.right-text {
+	position: absolute;
+	font-weight: 500;
+	transition: 0.4s;
+	color: var(--cool-gray);
+}
+
+.left-text {
+	left: -100px;
+}
+
+.right-text {
+	left: 80px;
+}
+
+input:checked ~ .pay-plan-slider:before {
+	transform: translateX(20px);
+}
+
+input:not(:checked) ~ .left-text {
+	color: var(--marine-blue);
+}
+
+input:checked ~ .right-text {
+	color: var(--marine-blue);
 }

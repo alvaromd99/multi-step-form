@@ -1,4 +1,3 @@
-import { ChangeEvent } from 'react'
 import Check from '../../assets/check.svg'
 
 interface AddOnProps {
@@ -7,7 +6,7 @@ interface AddOnProps {
 	price: string
 	inputName: string
 	isChecked: boolean
-	handleChange: (event: ChangeEvent<HTMLInputElement>) => void
+	handleClick: () => void
 }
 
 const AddOn = ({
@@ -16,10 +15,10 @@ const AddOn = ({
 	price,
 	inputName,
 	isChecked,
-	handleChange,
+	handleClick,
 }: AddOnProps) => {
 	return (
-		<div className='add-on'>
+		<div className='add-on' onClick={handleClick}>
 			<div className='add-on-first-part'>
 				<label htmlFor={inputName} className='add-on-checkbox'>
 					<input
@@ -28,7 +27,7 @@ const AddOn = ({
 						id={inputName}
 						className='checkbox'
 						checked={isChecked}
-						onChange={handleChange}
+						readOnly
 					/>
 					<img src={Check} alt='Check' />
 				</label>

@@ -11,8 +11,16 @@
 	justify-content: space-between;
 	padding: 1.4rem;
 	border-radius: 8px;
+	border: 2px solid transparent;
 
-	outline: 1px solid red;
+	&:hover {
+		border-color: var(--marine-blue);
+	}
+
+	&:has(input[type='checkbox']:checked) {
+		background-color: var(--magnolia);
+		border-color: var(--purplish-blue);
+	}
 }
 
 .add-on-first-part {
@@ -39,9 +47,4 @@ input[type='checkbox'] {
 
 .add-on-checkbox input[type='checkbox']:checked + img {
 	background-color: var(--purplish-blue);
-}
-
-.add-on-checkbox input[type='checkbox']:focus + img,
-.add-on-checkbox input[type='checkbox']:hover + img {
-	border-color: var(--marine-blue);
 }
