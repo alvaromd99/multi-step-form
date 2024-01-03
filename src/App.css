@@ -81,11 +81,17 @@
 	.next-btn {
 		background-color: var(--marine-blue);
 		min-height: 3rem;
+		width: 8rem;
 		padding: 1rem 1.4rem;
 		border: none;
 		color: var(--alabaster);
 		font-weight: 500;
 		border-radius: 8px;
+		cursor: pointer;
+	}
+
+	.next-btn.last {
+		background-color: var(--pastel-blue);
 	}
 
 	.back-btn {
@@ -94,5 +100,6 @@
 		border: none;
 		color: inherit;
 		font-weight: 500;
+		cursor: pointer;
 	}
 }

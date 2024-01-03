@@ -8,6 +8,7 @@ export default function Footer({ order }: FooterProps) {
 	const { changeComponentToShow } = useRender()
 
 	const isDisabled = order === 1
+	const isLast = order === 4
 
 	return (
 		<div
@@ -21,9 +22,9 @@ export default function Footer({ order }: FooterProps) {
 				Go Back
 			</button>
 			<button
-				className='next-btn'
+				className={`next-btn ${isLast ? 'last' : ''}`}
 				onClick={() => changeComponentToShow(order + 1)}>
-				Next Step
+				{isLast ? 'Confirm' : 'Next'}
 			</button>
 		</div>
 	)

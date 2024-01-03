@@ -25,7 +25,7 @@ const PickAddOns = () => {
 	}
 
 	return (
-		<div className='main-content-step step-two'>
+		<div className='main-content-step step-three'>
 			<Title
 				title='Pick add-ons'
 				subtitle='Add-ons help enhance your gaming experience'

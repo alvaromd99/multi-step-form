@@ -43,8 +43,8 @@ input[type='checkbox'] {
 		border: 1px solid var(--light-gray);
 		border-radius: 4px;
 	}
-}
 
-.add-on-checkbox input[type='checkbox']:checked + img {
-	background-color: var(--purplish-blue);
+	& input[type='checkbox']:checked + img {
+		background-color: var(--purplish-blue);
+	}
 }
