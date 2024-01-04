@@ -24,7 +24,7 @@ const InfoForm = () => {
 					placeholder='e.g. stephen@example.com'
 				/>
 				<CustomInput
-					id='phoneNumber'
+					id='phone'
 					label='Phone Number'
 					type='text'
 					placeholder='e.g. +1 234 567 890'

@@ -17,8 +17,9 @@ export default function CustomInput({
 	const [error, setError] = useState('')
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-		const inputValue = event.target.value
+		const { value: inputValue, id } = event.target
 		setValue(inputValue)
+		console.log(inputValue, id)
 
 		if (id === 'name') {
 			if (inputValue.length < 2 && inputValue !== '') {
