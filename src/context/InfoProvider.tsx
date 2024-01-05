@@ -5,16 +5,10 @@ interface InfoProviderProps {
 	children: JSX.Element | JSX.Element[]
 }
 
-export interface FormValuesState {
+export interface FormValuesAndErrorsState {
 	name: string
 	email: string
 	phone: string
-}
-
-export interface FormErrorsState {
-	nameError: string
-	emailError: string
-	phoneError: string
 }
 
 const FormValuesInitialState = {
@@ -23,22 +17,26 @@ const FormValuesInitialState = {
 	phone: '',
 }
 
+const FormErrorsInitialState = {
+	name: '',
+	email: '',
+	phone: '',
+}
+
 export const InfoProvider = ({ children }: InfoProviderProps) => {
-	const [formValues, setFormValues] = useState<FormValuesState>(
+	const [formValues, setFormValues] = useState<FormValuesAndErrorsState>(
 		FormValuesInitialState
 	)
 
-	const [formErrors, setFormErrors] = useState<FormErrorsState>({
-		nameError: '',
-		emailError: '',
-		phoneError: '',
-	})
+	const [formErrors, setFormErrors] = useState<FormValuesAndErrorsState>(
+		FormErrorsInitialState
+	)
 
 	const handleFormChange = ({
 		property,
 		value,
 	}: {
-		property: keyof FormValuesState
+		property: keyof FormValuesAndErrorsState
 		value: string
 	}) => {
 		setFormValues((prevState) => ({
@@ -51,7 +49,7 @@ export const InfoProvider = ({ children }: InfoProviderProps) => {
 		property,
 		value,
 	}: {
-		property: keyof FormErrorsState
+		property: keyof FormValuesAndErrorsState
 		value: string
 	}) => {
 		setFormErrors((prevState) => ({

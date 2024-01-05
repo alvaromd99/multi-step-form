@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react'
-import { FormErrorsState, FormValuesState } from '../../context/InfoProvider'
 import { useInfo } from '../../hooks/useInfo'
+import { FormValuesAndErrorsState } from '../../context/InfoProvider'
 
 interface CustomInputProps {
 	id: string
@@ -18,8 +18,8 @@ export default function CustomInput({
 	const { formValues, formErrors, handleFormChange, handleFormErrorChange } =
 		useInfo()
 
-	const value = formValues[id as keyof FormValuesState]
-	const error = formErrors[id as keyof FormErrorsState]
+	const value = formValues[id as keyof FormValuesAndErrorsState]
+	const error = formErrors[id as keyof FormValuesAndErrorsState]
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { value: inputValue } = event.target
@@ -45,12 +45,12 @@ export default function CustomInput({
 		}
 
 		handleFormChange({
-			property: id as keyof FormValuesState,
+			property: id as keyof FormValuesAndErrorsState,
 			value: inputValue,
 		})
 
 		handleFormErrorChange({
-			property: id as keyof FormErrorsState,
+			property: id as keyof FormValuesAndErrorsState,
 			value: validationError,
 		})
 	}

@@ -1,21 +1,21 @@
 import { createContext } from 'react'
-import { FormErrorsState, FormValuesState } from './InfoProvider'
+import { FormValuesAndErrorsState } from './InfoProvider'
 
 interface InfoContextProps {
-	formValues: FormValuesState
+	formValues: FormValuesAndErrorsState
 	handleFormChange: ({
 		property,
 		value,
 	}: {
-		property: keyof FormValuesState
+		property: keyof FormValuesAndErrorsState
 		value: string
 	}) => void
-	formErrors: FormErrorsState
+	formErrors: FormValuesAndErrorsState
 	handleFormErrorChange: ({
 		property,
 		value,
 	}: {
-		property: keyof FormErrorsState
+		property: keyof FormValuesAndErrorsState
 		value: string
 	}) => void
 }
