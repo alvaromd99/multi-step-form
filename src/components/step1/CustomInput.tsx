@@ -1,4 +1,6 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent } from 'react'
+import { FormErrorsState, FormValuesState } from '../../context/InfoProvider'
+import { useInfo } from '../../hooks/useInfo'
 
 interface CustomInputProps {
 	id: string
@@ -13,38 +15,44 @@ export default function CustomInput({
 	type,
 	placeholder,
 }: CustomInputProps) {
-	const [value, setValue] = useState('')
-	const [error, setError] = useState('')
+	const { formValues, formErrors, handleFormChange, handleFormErrorChange } =
+		useInfo()
+
+	const value = formValues[id as keyof FormValuesState]
+	const error = formErrors[id as keyof FormErrorsState]
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-		const { value: inputValue, id } = event.target
-		setValue(inputValue)
+		const { value: inputValue } = event.target
+
+		let validationError = ''
 
 		if (id === 'name') {
 			if (inputValue.length < 2 && inputValue !== '') {
-				setError('Name should be at least 2 characters')
-			} else {
-				setError('')
+				validationError = 'Name should be at least 2 characters'
 			}
 		} else if (id === 'email') {
 			const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 			if (!emailPattern.test(inputValue) && inputValue !== '') {
-				setError('Invalid email')
-			} else {
-				setError('')
+				validationError = 'Invalid email'
 			}
-		} else if (id === 'phoneNumber') {
+		} else if (id === 'phone') {
 			const phonePattern = /^\+\d{2}\s\d{3}\s\d{3}\s\d{3}$/
 
 			if (!phonePattern.test(inputValue) && inputValue !== '') {
-				setError('Use format: +12 234 567 890')
-			} else {
-				setError('')
+				validationError = 'Use format: +12 234 567 890'
 			}
-		} else {
-			setError('')
 		}
+
+		handleFormChange({
+			property: id as keyof FormValuesState,
+			value: inputValue,
+		})
+
+		handleFormErrorChange({
+			property: id as keyof FormErrorsState,
+			value: validationError,
+		})
 	}
 
 	return (

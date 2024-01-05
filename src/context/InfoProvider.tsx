@@ -17,12 +17,16 @@ export interface FormErrorsState {
 	phoneError: string
 }
 
+const FormValuesInitialState = {
+	name: '',
+	email: '',
+	phone: '',
+}
+
 export const InfoProvider = ({ children }: InfoProviderProps) => {
-	const [formValues, setFormValues] = useState<FormValuesState>({
-		name: 'hello',
-		email: 'hello',
-		phone: 'hello',
-	})
+	const [formValues, setFormValues] = useState<FormValuesState>(
+		FormValuesInitialState
+	)
 
 	const [formErrors, setFormErrors] = useState<FormErrorsState>({
 		nameError: '',
