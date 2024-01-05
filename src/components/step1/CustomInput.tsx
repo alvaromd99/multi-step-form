@@ -3,7 +3,7 @@ import { useInfo } from '../../hooks/useInfo'
 import { FormValuesAndErrorsState } from '../../context/InfoProvider'
 
 interface CustomInputProps {
-	id: string
+	id: keyof FormValuesAndErrorsState
 	label: string
 	type: string
 	placeholder: string
@@ -18,8 +18,8 @@ export default function CustomInput({
 	const { formValues, formErrors, handleFormChange, handleFormErrorChange } =
 		useInfo()
 
-	const value = formValues[id as keyof FormValuesAndErrorsState]
-	const error = formErrors[id as keyof FormValuesAndErrorsState]
+	const value = formValues[id]
+	const error = formErrors[id]
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { value: inputValue } = event.target
