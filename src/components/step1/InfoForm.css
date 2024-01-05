@@ -24,7 +24,7 @@
 	}
 
 	input:focus {
-		border-color: var(--marine-blue);
+		border-color: var(--purplish-blue);
 		outline: none;
 	}
 
