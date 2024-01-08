@@ -7,14 +7,11 @@ import './SelectPlan.css'
 import ArcadeIcon from '../../assets/images/icon-arcade.svg'
 import AdvanceIcon from '../../assets/images/icon-advanced.svg'
 import ProIcon from '../../assets/images/icon-pro.svg'
+import { usePlans } from '../../hooks/usePlans'
 
 const SelectPlan = () => {
-	const [isChecked, setIsChecked] = useState(false)
+	const { isChecked, handleToggleChange } = usePlans()
 	const [planSelected, setPlanSelected] = useState('')
-
-	const handleToggleChange = () => {
-		setIsChecked(!isChecked)
-	}
 
 	const handleClick = (plan: string) => {
 		setPlanSelected(plan)

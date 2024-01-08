@@ -45,12 +45,12 @@ export default function CustomInput({
 		}
 
 		handleFormChange({
-			property: id as keyof FormValuesAndErrorsState,
+			property: id,
 			value: inputValue,
 		})
 
 		handleFormErrorChange({
-			property: id as keyof FormValuesAndErrorsState,
+			property: id,
 			value: validationError,
 		})
 	}
