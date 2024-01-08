@@ -1,22 +1,40 @@
 import Check from '../../assets/check.svg'
+import { usePlans } from '../../hooks/usePlans'
 
 interface AddOnProps {
 	title: string
 	description: string
-	price: string
+	priceMonth: string
+	priceYear: string
 	inputName: string
-	isChecked: boolean
-	handleClick: () => void
+	isAddOnChecked: boolean
 }
 
 const AddOn = ({
 	title,
 	description,
-	price,
+	priceMonth,
+	priceYear,
 	inputName,
-	isChecked,
-	handleClick,
+	isAddOnChecked,
 }: AddOnProps) => {
+	const { isChecked, addAddOn, removeAddOn } = usePlans()
+
+	const typeOfPayment = isChecked ? 'yearly' : 'monthly'
+
+	const handleClick = () => {
+		if (isAddOnChecked) {
+			removeAddOn(inputName)
+		} else if (!isAddOnChecked) {
+			const newAddOn = {
+				id: inputName,
+				name: title,
+				price: typeOfPayment === 'monthly' ? priceMonth : priceYear,
+			}
+			addAddOn(newAddOn)
+		}
+	}
+
 	return (
 		<div className='add-on' onClick={handleClick}>
 			<div className='add-on-first-part'>
@@ -26,7 +44,7 @@ const AddOn = ({
 						name={inputName}
 						id={inputName}
 						className='checkbox'
-						checked={isChecked}
+						checked={isAddOnChecked}
 						readOnly
 					/>
 					<img src={Check} alt='Check' />
@@ -36,7 +54,11 @@ const AddOn = ({
 					<p>{description}</p>
 				</div>
 			</div>
-			<p className='add-on-price'>{price}</p>
+			<p className='add-on-price'>
+				{typeOfPayment === 'monthly'
+					? `+ $${priceMonth}/mo`
+					: `+ $${priceYear}/yr`}
+			</p>
 		</div>
 	)
 }
