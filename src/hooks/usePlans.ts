@@ -2,7 +2,8 @@ import { useContext } from 'react'
 import { PlansContext } from '../context/PlansContext'
 
 export const usePlans = () => {
-	const { isChecked, handleToggleChange } = useContext(PlansContext)
+	const { isChecked, planSelected, handleToggleChange, handlePlanClick } =
+		useContext(PlansContext)
 
-	return { isChecked, handleToggleChange }
+	return { isChecked, planSelected, handleToggleChange, handlePlanClick }
 }
