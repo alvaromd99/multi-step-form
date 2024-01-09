@@ -1,7 +1,17 @@
+import ArcadeIcon from '../../assets/images/icon-arcade.svg'
+import AdvanceIcon from '../../assets/images/icon-advanced.svg'
+import ProIcon from '../../assets/images/icon-pro.svg'
+
 export const plansDetails = [
-	{ title: 'Arcade', priceMonth: 9, priceYear: 90 },
-	{ title: 'Advance', priceMonth: 12, priceYear: 120 },
-	{ title: 'Pro', priceMonth: 15, priceYear: 150 },
+	{ id: '1', title: 'Arcade', priceMonth: 9, priceYear: 90, svg: ArcadeIcon },
+	{
+		id: '2',
+		title: 'Advance',
+		priceMonth: 12,
+		priceYear: 120,
+		svg: AdvanceIcon,
+	},
+	{ id: '3', title: 'Pro', priceMonth: 15, priceYear: 150, svg: ProIcon },
 ]
 
 export const checkboxesDetails = [
