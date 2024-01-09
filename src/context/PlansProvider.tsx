@@ -8,13 +8,13 @@ interface PlansProviderProps {
 export interface PlanSelectedState {
 	name: string
 	typeOfPay: 'monthly' | 'yearly'
-	price: string
+	price: number
 }
 
 export interface AddOnsSelectedState {
 	id: string
 	name: string
-	price: string
+	price: number
 }
 
 export interface CheckboxesState {
@@ -28,7 +28,7 @@ export const PlansProvider = ({ children }: PlansProviderProps) => {
 	const [planSelected, setPlanSelected] = useState<PlanSelectedState>({
 		name: '',
 		typeOfPay: 'monthly',
-		price: '',
+		price: 0,
 	})
 	const [addOnsSelected, setAddOnsSelected] = useState<AddOnsSelectedState[]>(
 		[]

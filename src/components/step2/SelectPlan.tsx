@@ -20,17 +20,17 @@ const SelectPlan = () => {
 			<div className='plan-content'>
 				<PlanCard
 					title='Arcade'
-					priceMonth='9'
-					priceYear='90'
+					priceMonth={9}
+					priceYear={90}
 					svg={ArcadeIcon}
 				/>
 				<PlanCard
 					title='Advance'
-					priceMonth='12'
-					priceYear='120'
+					priceMonth={12}
+					priceYear={120}
 					svg={AdvanceIcon}
 				/>
-				<PlanCard title='Pro' priceMonth='15' priceYear='150' svg={ProIcon} />
+				<PlanCard title='Pro' priceMonth={15} priceYear={150} svg={ProIcon} />
 			</div>
 			<div className='pay-plan'>
 				<label className='pay-plan-switch'>

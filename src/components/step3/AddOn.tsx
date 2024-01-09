@@ -4,8 +4,8 @@ import { usePlans } from '../../hooks/usePlans'
 interface AddOnProps {
 	title: string
 	description: string
-	priceMonth: string
-	priceYear: string
+	priceMonth: number
+	priceYear: number
 	inputName: string
 	isAddOnChecked: boolean
 }

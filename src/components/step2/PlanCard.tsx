@@ -2,8 +2,8 @@ import { usePlans } from '../../hooks/usePlans'
 
 interface PlanCardProps {
 	title: string
-	priceMonth: string
-	priceYear: string
+	priceMonth: number
+	priceYear: number
 	svg: string
 }
 

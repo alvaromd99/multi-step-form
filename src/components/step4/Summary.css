@@ -1,0 +1,23 @@
+.summary-info-cont {
+	margin-top: 3rem;
+	background-color: var(--light-gray);
+	padding: 2rem;
+}
+
+.summary-plan-info,
+.summary-total {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.summary-addon-info {
+	display: flex;
+	flex-direction: column;
+
+	.summary-addon-name {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
