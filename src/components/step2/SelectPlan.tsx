@@ -13,9 +13,9 @@ const SelectPlan = () => {
 				subtitle='You have the option of monthly or yearly billing.'
 			/>
 			<div className='plan-content'>
-				{plansDetails.map(({ id, title, priceMonth, priceYear, svg }) => (
+				{plansDetails.map(({ title, priceMonth, priceYear, svg }) => (
 					<PlanCard
-						key={id}
+						key={title}
 						title={title}
 						priceMonth={priceMonth}
 						priceYear={priceYear}

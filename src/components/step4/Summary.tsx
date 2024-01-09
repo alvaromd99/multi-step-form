@@ -1,10 +1,12 @@
 import { usePlans } from '../../hooks/usePlans'
+import { useRender } from '../../hooks/useRender'
 import Footer from '../footer/Footer'
 import Title from '../header/Title'
 import './Summary.css'
 
 const Summary = () => {
 	const { planSelected, addOnsSelected } = usePlans()
+	const { changeComponentToShow } = useRender()
 
 	const total = addOnsSelected.reduce((acc, addOn) => {
 		return acc + addOn.price
@@ -20,7 +22,7 @@ const Summary = () => {
 				<div className='summary-plan-info'>
 					<div className='plan-name'>
 						<h3>{`${planSelected.name} (${planSelected.typeOfPay})`}</h3>
-						<button>change</button>
+						<button onClick={() => changeComponentToShow(2)}>Change</button>
 					</div>
 					<div className='plan-price'>
 						<h3>{`$${planSelected.price}/${

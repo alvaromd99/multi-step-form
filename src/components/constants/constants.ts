@@ -27,15 +27,14 @@ export const inputDetails: InputDetails[] = [
 ]
 
 export const plansDetails = [
-	{ id: '1', title: 'Arcade', priceMonth: 9, priceYear: 90, svg: ArcadeIcon },
+	{ title: 'Arcade', priceMonth: 9, priceYear: 90, svg: ArcadeIcon },
 	{
-		id: '2',
 		title: 'Advance',
 		priceMonth: 12,
 		priceYear: 120,
 		svg: AdvanceIcon,
 	},
-	{ id: '3', title: 'Pro', priceMonth: 15, priceYear: 150, svg: ProIcon },
+	{ title: 'Pro', priceMonth: 15, priceYear: 150, svg: ProIcon },
 ]
 
 export const checkboxesDetails = [
