@@ -10,8 +10,6 @@ const Summary = () => {
 		return acc + addOn.price
 	}, planSelected.price)
 
-	console.log(total)
-
 	return (
 		<div className='main-content-step step-three'>
 			<Title

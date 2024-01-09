@@ -1,3 +1,4 @@
+import { inputDetails } from '../constants/constants'
 import Footer from '../footer/Footer'
 import Title from '../header/Title'
 import CustomInput from './CustomInput'
@@ -11,24 +12,15 @@ const InfoForm = () => {
 				subtitle='Please provide your name, email address and phone number.'
 			/>
 			<div className='form-content'>
-				<CustomInput
-					id='name'
-					label='Name'
-					type='text'
-					placeholder='e.g. Stephen King'
-				/>
-				<CustomInput
-					id='email'
-					label='Email Address'
-					type='email'
-					placeholder='e.g. stephen@example.com'
-				/>
-				<CustomInput
-					id='phone'
-					label='Phone Number'
-					type='text'
-					placeholder='e.g. +1 234 567 890'
-				/>
+				{inputDetails.map(({ id, label, type, placeholder }) => (
+					<CustomInput
+						key={id}
+						id={id}
+						label={label}
+						type={type}
+						placeholder={placeholder}
+					/>
+				))}
 			</div>
 			<Footer order={1} />
 		</div>

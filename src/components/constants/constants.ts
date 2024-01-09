@@ -1,6 +1,30 @@
 import ArcadeIcon from '../../assets/images/icon-arcade.svg'
 import AdvanceIcon from '../../assets/images/icon-advanced.svg'
 import ProIcon from '../../assets/images/icon-pro.svg'
+import { FormValuesAndErrorsState } from '../../context/InfoProvider'
+
+interface InputDetails {
+	id: keyof FormValuesAndErrorsState
+	label: string
+	type: string
+	placeholder: string
+}
+
+export const inputDetails: InputDetails[] = [
+	{ id: 'name', label: 'Name', type: 'text', placeholder: 'e.g. Stephen King' },
+	{
+		id: 'email',
+		label: 'Email Address',
+		type: 'email',
+		placeholder: 'e.g. stephen@example.com',
+	},
+	{
+		id: 'phone',
+		label: 'Phone Number',
+		type: 'text',
+		placeholder: 'e.g. +1 234 567 890',
+	},
+]
 
 export const plansDetails = [
 	{ id: '1', title: 'Arcade', priceMonth: 9, priceYear: 90, svg: ArcadeIcon },
