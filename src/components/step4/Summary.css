@@ -23,12 +23,12 @@
 		margin-top: 10px;
 		background-color: transparent;
 		border: none;
-		color: var(--marine-blue);
+		color: var(--cool-gray);
+		text-decoration: underline;
 	}
 
 	button:hover {
 		color: var(--purplish-blue);
-		text-decoration: underline;
 	}
 }
 

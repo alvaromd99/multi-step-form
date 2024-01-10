@@ -13,7 +13,7 @@ const Summary = () => {
 	}, planSelected.price)
 
 	return (
-		<div className='main-content-step step-three'>
+		<div className='main-content-step step-four'>
 			<Title
 				title='Finishing up'
 				subtitle='Double-check everything is OK before confirming'
