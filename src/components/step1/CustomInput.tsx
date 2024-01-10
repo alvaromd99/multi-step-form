@@ -37,10 +37,10 @@ export default function CustomInput({
 				validationError = 'Invalid email'
 			}
 		} else if (id === 'phone') {
-			const phonePattern = /^\+\d{2}\s\d{3}\s\d{3}\s\d{3}$/
+			const phonePattern = /^\d{3} \d{3} \d{3}$/
 
 			if (!phonePattern.test(inputValue) && inputValue !== '') {
-				validationError = 'Use format: +12 234 567 890'
+				validationError = 'Use format: 123 123 123'
 			}
 		}
 
