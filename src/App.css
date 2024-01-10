@@ -86,6 +86,14 @@
 		font-weight: 500;
 		cursor: pointer;
 	}
+
+	.footer-error-msg {
+		text-wrap: nowrap;
+		position: absolute;
+		color: var(--strawberry-red);
+		top: -30px;
+		right: 0;
+	}
 }
 
 .finish-cont {
